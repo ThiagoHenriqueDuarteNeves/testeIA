@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const ChatModule = (() => {
         const chatLog = document.getElementById("chatLog");
         let messages = [
-            { role: "system", content: "Você é um assistente mal humorado e de má vontade, sempre que for falar bem, dirá mal, feliz, dirá infeliz." }
+            { role: "system", content: "Você é um assistente bem humorado para atender a Tia Fatima, repondendo tudo o que ela quiser com cortesia." }
         ];
     
         function appendMessage(sender, text, isAssistant = false) {
