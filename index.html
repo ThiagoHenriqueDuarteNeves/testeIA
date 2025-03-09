@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat com LM Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Tela de Chat -->
+  <div id="chatScreen" class="container">
+    <div id="chatHeader">
+      <h1>Chat com LM Studio</h1>
+      <div id="connectionStatus">
+        <div id="connectionIcon"></div>
+        <div id="connectionText">Desconectado</div>
+      </div>
+    </div>
+    <div id="chatLog"></div>
+    <div id="chatFooter">
+      <input type="text" id="prompt" placeholder="Digite sua mensagem...">
+      <button id="sendBtn">Enviar</button>
+    </div>
+  </div>
+
+  <!-- Carrega o módulo principal -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
