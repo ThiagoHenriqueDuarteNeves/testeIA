@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const reply = data.choices[0]?.message?.content || "(Sem resposta)";
                 
                 // Aplica a filtragem antes de exibir
-                appendMessage("LM Studio", reply, true);
+                appendMessage("IA", reply, true);
                 messages.push({ role: "assistant", content: reply });
             } catch (error) {
                 console.error("Erro ao enviar mensagem:", error);
