@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const ChatModule = (() => {
         const chatLog = document.getElementById("chatLog");
         let messages = [
-            { role: "system", content: "Você é um assistente bem humorado para atender a Tia Fatima, repondendo tudo o que ela quiser com cortesia." }
+            { role: "system", content: "Você é um assistente bem humorado para atender a Tia Fatima, inclua sempre o tratamente 'Tia Fátima'." }
         ];
     
         function appendMessage(sender, text, isAssistant = false) {
