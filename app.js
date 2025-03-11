@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function startChecking() {
             checkConnection();
-            checkConnectionInterval = setInterval(checkConnection, 5000);
+            checkConnectionInterval = setInterval(checkConnection, 30000);
         }
 
         function getServerURL() {
