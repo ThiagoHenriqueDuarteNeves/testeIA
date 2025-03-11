@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const data = await response.json();
                 const reply = data.choices[0]?.message?.content || "(Sem resposta)";
                 
-                appendMessage("LM Studio", reply, true);
+                appendMessage("IA", reply, true);
                 messages.push({ role: "assistant", content: reply });
 
             } catch (error) {
