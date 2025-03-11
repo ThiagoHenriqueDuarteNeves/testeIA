@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function showThinkingIndicator() {
             const thinkingId = `thinking-${Date.now()}`;
-            appendMessage("LM Studio", '<div class="thinking-dots">Gerando Resposta</div>', true, thinkingId);
+            appendMessage("IA", '<div class="thinking-dots">Gerando Resposta</div>', true, thinkingId);
             return thinkingId;
         }
 
