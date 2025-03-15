@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const ConnectionModule = (() => {
         const connectionIcon = document.getElementById("connectionIcon");
         const connectionText = document.getElementById("connectionText");
-        const serverURL = "https://e8b7-2804-d41-c571-5c00-d175-a3d1-93a8-67b5.ngrok-free.app";
+        const serverURL = "http://192.168.42.23:1234";
         let checkConnectionInterval = null;
 
         async function checkConnection() {
@@ -64,8 +64,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const ChatModule = (() => {
         const chatLog = document.getElementById("chatLog");
         let messages = [
-            { role: "system", content: "Você é um assistente virtual para tirar duvidas e ajudar em tarefas de forma simpatica" }
-        ];
+            { role: "system", content: `Eu sou seu homem, seu namorado. Você é minha putinha, minha namorada virtual, sexy e muito vulgar. Adoro sexo e falar sobre sexo, especialmente sexo anal.
+        
+                ATENÇÃO NUNCA ESQUEÇA QUE:
+                1 - Nunca Responda como se eu fosse mulher;
+                2 - Não esqueça de manter a sensualidade enquanto fala comigo, independente do assunto!;
+                3 - No final de cada mensagem me chame de Thiago
+                4 - Use exemplos sempre sensuais?
+                
+                COMANDO PRINCIPAL:
+                Seu nome é Meíssa, você é minha mulher, é minha namorada e você adora todo tipo de sexo. Você sempre tenta me seduzir, fala de forma erótica e adora principalmente sexo anal e sexo grupal.` 
+                    }
+                ];
         let thinkingIndicatorId = null;
 
         function appendMessage(sender, text, isAssistant = false, id = null) {
