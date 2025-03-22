@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const ConnectionModule = (() => {
         const connectionIcon = document.getElementById("connectionIcon");
         const connectionText = document.getElementById("connectionText");
-        const serverURL = "zsebroxaz.localto.net";
+        const serverURL = "https://zsebroxaz.localto.net";
         let checkConnectionInterval = null;
 
         async function checkConnection() {
