@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         async function checkConnection() {
             try {
-                const response = await fetch(`${serverURL}/api/v0/models`);
+                const response = await fetch(`${serverURL}/api/v1/models`);
                 if (response.ok) {
                     connectionIcon.style.backgroundColor = "green";
                     connectionText.textContent = "Conectado";
