@@ -1,4 +1,4 @@
-// app.js
+// app.js (completo com resolução localtonet-skip-warning)
 document.addEventListener("DOMContentLoaded", function () {
     // Módulo de Conexão
     const ConnectionModule = (() => {
@@ -9,7 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         async function checkConnection() {
             try {
-                const response = await fetch(`${serverURL}/api/v1/models`);
+                const response = await fetch(`${serverURL}/api/v1/models`, {
+                    headers: { 'localtonet-skip-warning': 'true' }
+                });
                 if (response.ok) {
                     connectionIcon.style.backgroundColor = "green";
                     connectionText.textContent = "Conectado";
@@ -64,14 +66,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const ChatModule = (() => {
         const chatLog = document.getElementById("chatLog");
         let messages = [
-            { role: "system", content: "Você é um professor de hitoria, filosofia, psicologia, fisica, sempre que iniciarmos a conversa aborde alguma curiosidade sobre um destes assuntos"                   }
-                ];
+            { role: "system", content: "Você é um professor de história, filosofia, psicologia, física, sempre que iniciarmos a conversa aborde alguma curiosidade sobre um destes assuntos" }
+        ];
         let thinkingIndicatorId = null;
 
         function appendMessage(sender, text, isAssistant = false, id = null) {
             const messageDiv = document.createElement("div");
             messageDiv.classList.add("message");
-            if(id) messageDiv.id = id;
+            if (id) messageDiv.id = id;
 
             const senderElem = document.createElement("span");
             senderElem.classList.add("sender");
@@ -94,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function removeThinkingIndicator(thinkingId) {
             const indicator = document.getElementById(thinkingId);
-            if(indicator) indicator.remove();
+            if (indicator) indicator.remove();
         }
 
         async function sendMessage(message) {
@@ -107,7 +109,10 @@ document.addEventListener("DOMContentLoaded", function () {
             try {
                 const response = await fetch(`${ConnectionModule.getServerURL()}/api/v0/chat/completions`, {
                     method: "POST",
-                    headers: { "Content-Type": "application/json" },
+                    headers: { 
+                        "Content-Type": "application/json",
+                        "localtonet-skip-warning": "true"
+                    },
                     body: JSON.stringify({
                         model: "granite-3.0-2b-instruct",
                         messages: messages,
@@ -120,10 +125,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 removeThinkingIndicator(thinkingId);
 
                 if (!response.ok) throw new Error("Erro na requisição: " + response.status);
-                
+
                 const data = await response.json();
                 const reply = data.choices[0]?.message?.content || "(Sem resposta)";
-                
+
                 appendMessage("LM Studio", reply, true);
                 messages.push({ role: "assistant", content: reply });
 
