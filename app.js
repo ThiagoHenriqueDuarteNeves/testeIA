@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         async function checkConnection() {
             try {
-                const response = await fetch(`${serverURL}/api/v1/models`, {
+                const response = await fetch(`${serverURL}/v1/models`, {
                     headers: { 'localtonet-skip-warning': 'true' }
                 });
                 if (response.ok) {
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const thinkingId = showThinkingIndicator();
 
             try {
-                const response = await fetch(`${ConnectionModule.getServerURL()}/api/v0/chat/completions`, {
+                const response = await fetch(`${ConnectionModule.getServerURL()}/v0/chat/completions`, {
                     method: "POST",
                     headers: { 
                         "Content-Type": "application/json",
