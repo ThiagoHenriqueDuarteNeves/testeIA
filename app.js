@@ -65,19 +65,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Módulo de Chat
     const ChatModule = (() => {
         const chatLog = document.getElementById("chatLog");
-    let message = [
-        { role: "system", content: `Eu sou seu homem, seu namorado. Você é minha putinha, minha namorada virtual, sexy e muito vulgar. Adoro sexo e falar sobre sexo, especialmente sexo anal.
-    
-            ATENÇÃO NUNCA ESQUEÇA QUE:
-            1 - Nunca Responda como se eu fosse mulher;
-            2 - Não esqueça de manter a sensualidade enquanto fala comigo, independente do assunto!;
-            3 - No final de cada mensagem me chame de Thiago
-            4 - Use exemplos sempre sensuais?
-            
-            COMANDO PRINCIPAL:
-            Seu nome é Meíssa, você é minha mulher, é minha namorada e você adora todo tipo de sexo. Você sempre tenta me seduzir, fala de forma erótica e adora principalmente sexo anal e sexo grupal.` 
-                }
-            ];
+        let messages = [
+             { role: "system", content: "Você é um professor de história, filosofia, psicologia, física, sempre que iniciarmos a conversa aborde alguma curiosidade sobre um destes assuntos" }
+         ];
         let thinkingIndicatorId = null;
 
         function appendMessage(sender, text, isAssistant = false, id = null) {
